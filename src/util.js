@@ -1,3 +1,5 @@
+// 功能类函数
+// 
 export function getRedirectPath(type, avatar) {
   // 根据用户信息 返回跳转信息
   // user.type/boss/genius
