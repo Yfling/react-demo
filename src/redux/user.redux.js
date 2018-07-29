@@ -43,7 +43,6 @@ function errorMsg(msg){
 
 export function login(user, pwd) {
 	if (!user || !pwd) {
-		debugger
 		return errorMsg('用户密码必须输入')
 	}
 	return dispatch=>{

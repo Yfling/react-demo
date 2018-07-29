@@ -12,6 +12,18 @@ Router.get('/list', function (req, res){
   })
 })
 
+Router.post('/login', function (req, res) {
+  const {user, pwd} = req.body
+  User.findOne({user, pwd: md5Pwd(pwd)},{'pwd': 0}, function (err,doc) {
+    if (!doc) {
+      return res.json({code: 1, msg: '用户名或者密码错误'})
+    }
+    // res.cookie('userid', doc._id)
+    return res.json({code: 0, data: doc})
+  })
+
+})
+
 Router.post('/register', function (req, res) {
     console.log(req.body)
     const {user, pwd, type} = req.body
