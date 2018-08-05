@@ -18,7 +18,9 @@ const initState={
 export function user(state=initState, action){
 	switch(action.type){
 		case AUTH_SUCCESS:
+		debugger
 			return {...state, msg:'',redirectTo:getRedirectPath(action.payload),...action.payload}
+			debugger;
 		case LOAD_DATA:
 			return {...state, ...action.payload}
 		case ERROR_MSG:
@@ -47,6 +49,7 @@ export function update(data) {
 				if (res.status==200&&res.data.code===0) {
 					// dispatch(registerSuccess({user,pwd,type}))
 					dispatch(authSuccess(res.data.data))
+					// debugger
 				}
 				else {
 					dispatch(errorMsg(res.data.msg))
