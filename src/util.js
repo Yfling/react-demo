@@ -9,6 +9,5 @@ export function getRedirectPath(type, avatar) {
   if (!avatar) {
     url += 'info'
   }
-  debugger;
   return url
 }

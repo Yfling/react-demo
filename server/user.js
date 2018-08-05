@@ -13,7 +13,6 @@ Router.get('/list', function (req, res){
 })
 
 Router.post('/update',function(req,res){
-  debugger;
 	const userid = req.cookies.userid
 	if (!userid) {
 		return json.dumps({code:1})
