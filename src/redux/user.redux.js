@@ -48,7 +48,6 @@ export function update(data) {
 				if (res.status==200&&res.data.code===0) {
 					// dispatch(registerSuccess({user,pwd,type}))
 					dispatch(authSuccess(res.data.data))
-					// debugger
 				}
 				else {
 					dispatch(errorMsg(res.data.msg))
