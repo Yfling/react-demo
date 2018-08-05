@@ -26,6 +26,7 @@ ReactDom.render(
       <div>
         <AuthRoute></AuthRoute>
         <Switch>
+          <Route path='/geniusinfo' component={GeniusInfo}></Route>
           <Route path='/bossinfo' component={BossInfo}></Route>
           <Route path='/geniusinfo' component={GeniusInfo}></Route>
           <Route path='/login' component={Login}></Route>
