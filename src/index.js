@@ -14,6 +14,7 @@ import Dashboard from './component/dashboard/dashboard'
 import reducers from './reducer'
 import './config'
 import './redux/index.css'
+import './index.css'
 const store = createStore(reducers, compose(
   applyMiddleware(thunk),
   window.devToolsExtension?window.devToolsExtension():f=>f
