@@ -4,28 +4,22 @@ import {NavBar} from 'antd-mobile'
 import {Switch, Route} from 'react-router-dom'
 import NavLinkBar from '../navlink/navlink'
 import Boss from '../../component/boss/boss'
-// import Genius from '../../component/genius/genius'
-// function Boss() {
-//   return <h2>Boss首页</h2>
-// }
-function Genius() {
-  return <h2>牛人首页</h2>
+import Genius from '../../component/genius/genius'
+function Msg(){
+	return <h2>消息列表页面</h2>
 }
-function Msg() {
-  return <h2>消息列表</h2>
-}
-function User() {
-  return <h2>个人中心</h2>
+function User(){
+	return <h2>个人中心页面</h2>
 }
 @connect(
-  state=>state
+	state=>state
 )
-
 class Dashboard extends React.Component{
-  render() {
-    const {pathname} = this.props.location
-    const user = this.props.user
-    const navList = [
+
+	render(){
+		const {pathname} = this.props.location
+		const user = this.props.user
+		const navList = [
 			{
 				path:'/boss',
 				text:'牛人',
@@ -59,7 +53,7 @@ class Dashboard extends React.Component{
 		]
 
 
-    return (
+		return (
 			<div>
 				<NavBar className='fixd-header' mode='dard'>{navList.find(v=>v.path==pathname).title}</NavBar>
 				<div style={{marginTop:45}}>
@@ -74,7 +68,10 @@ class Dashboard extends React.Component{
 
 			</div>
 		)
-  }
+
+
+	}
+
 }
 
 export default Dashboard

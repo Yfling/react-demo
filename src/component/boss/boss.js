@@ -1,15 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 import {Card, WhiteSpace, WingBlank} from 'antd-mobile'
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 // import {Card, WhiteSpace,WingBlank} from 'antd-mobile'
-// import {getUserList} from '../../redux/chatuser.redux'
+import {getUserList} from '../../redux/chatuser.redux'
 // import UserCard from '../usercard/usercard'
 
-// @connect(
-// 	state=>state.chatuser,
-// 	{getUserList}
-// )
+@connect(
+	state=>state.chatuser,
+	{getUserList}
+)
 class Boss extends React.Component{
 	constructor(props) {
 		super(props);
@@ -18,7 +18,7 @@ class Boss extends React.Component{
 		}
 	}
 	componentDidMount() {
-		// this.props.getUserList('genius')
+		this.props.getUserList('genius')
 
 		axios.get('/user/list?type=genius ')
 			.then(res => {
@@ -33,7 +33,7 @@ class Boss extends React.Component{
 		return (
 			<WingBlank>
 				<WhiteSpace></WhiteSpace>
-				{this.state.data.map(v=>(
+				{this.props.userlist.map(v=>(
 					v.avatar?<Card key={v._id}>
 					<Header
 						title={v.user}
